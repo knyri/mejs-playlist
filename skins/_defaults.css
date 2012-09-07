@@ -1,0 +1,6 @@
+.mejs-controls button{display:block;margin:0 auto;border-width:0;border-color:transparent;border-style:hidden;background-color:transparent;}
+.mejs-time-rail span{position:absolute;display:block;cursor:pointer;left:0;}
+.mejs-time-rail .mejs-time-float{visibility:hidden;width:36px;height:17px!important;top:-26px;margin-left:-18px;}
+.mejs-time-rail:hover .mejs-time-float {visibility:visible}
+.mejs-time-rail .mejs-time-float .mejs-time-float-current{background:#eee;border:solid 1px #333;width:36px;text-align:center;font-size:11px;height:17px!important;line-height:17px!important;z-index:999;}
+.mejs-time-rail .mejs-time-float .mejs-time-float-corner{width:0!important;height:0!important;line-height:0!important;border:solid 5px #eee;border-color:#eee transparent transparent transparent;border-radius:0;top:15px;left:13px;}
