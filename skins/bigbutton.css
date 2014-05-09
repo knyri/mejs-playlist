@@ -1,0 +1,7 @@
+div.bigbtn.mejs-container{background:url(i/big-btn-skin.png) top left no-repeat;}
+.bigbtn button{background-image:url(i/big-btn-skin.png)}
+.bigbtn .mejs-controls{width:40px;height:40px;}
+.bigbtn .mejs-playpause-button{width:40px;height:40px}
+.bigbtn .mejs-playpause-button button{width:40px;height:40px}
+.bigbtn .mejs-play button{background-position:0 -40px}
+.bigbtn .mejs-pause button{background-position:0 -80px}

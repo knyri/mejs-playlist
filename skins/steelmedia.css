@@ -1,0 +1,26 @@
+div.steelmedia.mejs-container{background:url(i/skin_itunesc_bkgd.jpg) top left no-repeat;text-align:left}
+.steelmedia .mejs-controls button{background-image:url(i/steelmedia-btns.png)}
+.steelmedia .mejs-currently-playing{position:absolute;left:170px;top:30px;width:250px;font-size:16px}
+.steelmedia .mejs-time-rail{width:306px!important;height:8px;top:50px;left:170px;position:absolute;border:2px solid #000}
+.steelmedia .mejs-time-rail span{height:8px;background:transparent}
+.steelmedia .mejs-time-rail .mejs-time-total{width:306px!important}
+.steelmedia .mejs-time-rail .mejs-time-current{background:#cff}
+.steelmedia .mejs-time-rail .mejs-time-handle{width:10px;background:#000}
+.steelmedia .mejs-controls{position:relative;width:100%;height:100%}
+.steelmedia .mejs-playlist{height:200px;width:500px;position:absolute;top:88px;left:10px;color:#000;overflow:hidden;float:none}
+.steelmedia .mejs-playlist ol{font-size:14px;margin:0;padding:0;background:#c6ddc6;list-style:none}
+.steelmedia .mejs-playlist ol li{margin:0;padding:0}
+.steelmedia .mejs-playlist-item-active{background:#ddd;color:#000}
+.steelmedia .mejs-playpause-button button{width:40px;height:40px}
+.steelmedia .mejs-playpause-button{background:url(i/steelmedia-btns.png) 0 0 no-repeat;position:absolute;top:23px;left:59px}
+.steelmedia .mejs-play button{background-position:0 -40px}
+.steelmedia .mejs-pause button{background-position:0 -80px}
+.steelmedia .mejs-playlist-next{background:url(i/steelmedia-btns.png) -40px 0 no-repeat;position:absolute;top:27px;left:107px}
+.steelmedia .mejs-playlist-previous{background:url(i/steelmedia-btns.png) -40px 0 no-repeat;position:absolute;top:27px;left:21px}
+.steelmedia .mejs-playlist-next button{background-position:-72px 0;width:32px;height:32px}
+.steelmedia .mejs-playlist-previous button{background-position:-72px -32px;width:32px;height:32px}
+.steelmedia .scrollbar{width:37px;position:absolute;top:0;right:0;cursor:default}
+.steelmedia .scrollbar-track{text-align:center}
+.steelmedia .scrollbar-handle{width:16px;height:16px;position:relative;margin:0 auto;top:0;background-position:-40px -100px}
+.steelmedia .scrollbar-up button{width:32px;height:32px;background-position:-40px -32px}
+.steelmedia .scrollbar-down button{width:32px;height:32px;background-position:-40px -64px}

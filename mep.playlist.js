@@ -1,3 +1,5 @@
+var isFireFox=false;
+if(navigator.userAgent && navigator.userAgent.indexOf("Firefox")!=-1)isFireFox=true;
 /*!
  * MediaElementPlayer Playlist plugin
  * @author Kenneth Pierce
@@ -34,53 +36,60 @@
 		l.append(playlist);
 	};
 	MediaElementPlayer.prototype.makeplaylistitem=function(p,m,idx) {//function needed only to localize the value of the current index
-		var entry=p.options.playlist[idx],item;
-		if(!entry.pop){
-			entry=[entry];
+		var entry=p.options.playlist[idx],item,host='';
+		if(p.options.playlisthost){
+			host=p.options.playlisthost;
+			if(host[host.length-1]!='/')host+='/';
 		}
+		if(!entry.pop)
+			entry=[entry];
 		if(entry.length==1)
 			item=$('<li class="mejs-playlist-item">'+entry[0]+'</li>');
 		else
 			item=$('<li class="mejs-playlist-item">'+entry[1]+'</li>');
 		item.click(function(){
-			p.pause();
+			p.pause();//doesn't reset the UI in FireFox
 			if(p.isVideo){
-				p.setPoster(entry[0]+'.jpg');
+				p.setPoster(host+entry[0]+'.jpg');
 				if(m.canPlayType('video/mp4'))
-					p.setSrc(entry[0]+'.mp4');
+					p.setSrc(host+entry[0]+'.mp4');
 				else if(m.canPlayType('video/ogg'))
-					p.setSrc(entry[0]+'.ogg');
+					p.setSrc(host+entry[0]+'.ogg');
 				else if(m.canPlayType('video/webm'))
-					p.setSrc(entry[0]+'.webm');
+					p.setSrc(host+entry[0]+'.webm');
 			}else{
 				if(p.options.audioPosters)
-					p.layers.find('.mejs-audio-poster').attr('src',entry[0]+'.jpg');
+					p.layers.find('.mejs-audio-poster').attr('src',host+entry[0]+'.jpg');
 				if(m.canPlayType('audio/mpeg'))
-					p.setSrc(entry[0]+'.mp3');
+					p.setSrc(host+entry[0]+'.mp3');
 				else if(m.canPlayType('audio/ogg'))
-					p.setSrc(entry[0]+'.ogg');
+					p.setSrc(host+entry[0]+'.ogg');
 			}
-			p.load();
 			item.addClass('mejs-playlist-item-active');
 			if(p.options.currentlyplayingele)
 				p.options.currentlyplayingele.html(item.html());
 			item.siblings().removeClass('mejs-playlist-item-active');
-			var ftmp=function() {
-				p.media.removeEventListener('loadeddata',ftmp);
+			if(isFireFox)
 				p.play();
-			};
-			p.media.addEventListener('loadeddata',ftmp,false);
+			else{
+				var ftmp=function(){
+					p.media.removeEventListener('loadeddata',ftmp);
+					p.play();
+				};
+				p.media.addEventListener('loadeddata',ftmp,false);
+				p.load();//Firefox seems to ignore this...
+			}
 		});
 		return item;
 	};
 	MediaElementPlayer.prototype.buildnext=function(p,c,l,m) {
 		$('<div class="mejs-button mejs-playlist-next"><button type="button"></button></div>').appendTo(c).click(function() {
-			p.find('.mejs-playlist-item-active').next().click();
+			p.layers.find('.mejs-playlist-item-active').next().click();
 		});
 	};
 	MediaElementPlayer.prototype.buildprevious=function(p,c,l,m) {
 		$('<div class="mejs-button mejs-playlist-previous"><button type="button"></button></div>').appendTo(c).click(function() {
-			p.find('.mejs-playlist-item-active').prev().click();
+			p.layers.find('.mejs-playlist-item-active').prev().click();
 		});
 	};
 	MediaElementPlayer.prototype.buildcurrentlyplaying=function(p,c,l,m) {

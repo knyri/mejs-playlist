@@ -1,0 +1,22 @@
+div.ipod.mejs-container{background:transparent url(i/ipod.png) top left no-repeat;text-align:left;}
+.ipod .mejs-controls button{width:12px;height:12px;padding:0;background-image:url(i/ipod.png);background-color:transparent;}
+.ipod .mejs-controls{position:relative;top:21px;left:21px;width:124px;height:225px;}
+.ipod .mejs-playlist{height:72px;width:130px;position:absolute;top:0;left:0;color:#000;overflow:hidden;float:none;}
+.ipod .mejs-playlist ol{font-size:10px;list-style:none;padding:0;margin:0}
+.ipod .mejs-playlist ol li{margin:0;padding:0}
+.ipod .mejs-playlist-item-active{background:#ddd;color:#000}
+.ipod .mejs-playpause-button{position:absolute;top:163px;left:60px}
+.ipod .mejs-play button{background-position:0 -289px}
+.ipod .mejs-pause button{background-position:0 -303px}
+.ipod .mejs-playlist-next{position:absolute;top:165px;left:101px}
+.ipod .mejs-playlist-previous{position:absolute;top:165px;left:20px}
+.ipod .mejs-playlist-next button{background-position: -68px -303px}
+.ipod .mejs-playlist-previous button{background-position:-68px -289px}
+.ipod .mejs-time-rail{position:relative;top:73px;height:8px;border:2px solid #000;}
+.ipod .mejs-time-rail span{height:8px;background:transparent}
+.ipod .mejs-time-rail .mejs-time-current{background:#cff}
+.ipod .mejs-time-rail .mejs-time-handle{width:10px;background:#000}
+.ipod .scrollbar{width:8px;top:0;right:0;position:absolute;cursor:default;border:1px solid #000}
+.ipod .scrollbar .scrollbar-handle{width:8px;left:0;top:0;position:relative;background:#000;}
+.ipod .scrollbar-up button{background-position:-96px -289px;height:15px;width:8px}
+.ipod .scrollbar-down button{background-position:-96px -304px;height:15px;width:8px}
